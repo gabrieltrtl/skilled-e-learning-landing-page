@@ -1,0 +1,67 @@
+// Media Query
+@mixin device($device) {
+  @if $device == tablet {
+    @media (min-width: 700px) {
+      @content;
+    }
+  }  
+  @else if $device == desktop {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+// Colors
+$color1: #FFFFFF;
+$color2: #13183F;
+$color3: #83869A;
+$color4: #F74780;
+$color5: #666CA3;
+$bg-color1: linear-gradient(to bottom,#FF6F48, #F02AA6);
+$bg-color2: linear-gradient(to bottom,#4851FF, #F02AA6);
+
+
+// Typography
+
+$fonts: (
+  "$xsmall": 16px,
+  "$small": 18px,
+  "$medium1": 20px,
+  "$medium2": 24px,
+  "$medium3": 32px,
+  "$large1": 40px,
+  "$large2": 56px,
+);
+
+// Buttons
+
+
+.btn-1 {
+  font-size: map-get($fonts, "$xsmall");
+  line-height: 1.5;
+  display: inline-block;
+  color: $color1;
+  padding: 12px 25.5px;
+  border-radius: 28px;
+  @include device(tablet) {
+    font-size: map-get($fonts, "$small");
+    padding: 14.5px 33.8px;
+  }
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+
+.btn-2 {
+  font-size: map-get($fonts, "$small");
+  line-height: 1.5;
+  display: inline-block;
+  color: $color1;
+  padding: 14.5px 33px;
+  border-radius: 31px;
+  &:hover {
+    opacity: 0.5;
+  }
+}
